@@ -17,7 +17,7 @@ class Login extends Component {
   handleSubmit = (event) => {
     axios
       .post(
-        "https://25.69.166.33:8000/dj-rest-auth/login/",
+        "localhost:8000/dj-rest-auth/login/",
         { email: this.state.email, password: this.state.password },
         { withCredentials: true }
       )

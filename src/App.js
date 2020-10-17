@@ -1,12 +1,18 @@
-import '../src/bootstrap/dist/css/bootstrap.css'
-import React from 'react';
-import Login from '../src/Login.js'
+import "../src/bootstrap/dist/css/bootstrap.css";
+import React from "react";
+import Login from "./Login";
+import Registration from "./Registration";
+import Main from "./Main";
+
+function page_selection() {
+  return Math.random() > 0.5 ? <Login /> : <Registration />;
+}
 
 function App() {
   return (
     <div className="App">
-      <Login />
-    </div >
+      <Main />
+    </div>
   );
 }
 

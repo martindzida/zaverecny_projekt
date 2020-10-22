@@ -20,7 +20,7 @@
  <h4>Začátek října - 19.10. 2020 </h4>
   <p>Hotová Login a Registrační stránka (ne však ve finální podobě :>), hrubý základ hlavní stránky a nějaká snaha propojení s Matějovým backendem.</p>
  <h4>22.10. 2020</h4>
-  <p>Zjištění přílišné ambicióznosti vlastního kalendáře, jehož realizace se tím pádem lehce odsouvá. Mírné úpravy na hlavní stránce a doladění drobnosti u       Přihlášení/Registrace a trochu vtipně vypadající prototyp "logů"</p>
+  <p>Zjištění přílišné ambicióznosti vlastního kalendáře, jehož realizace se tím pádem lehce odsouvá. Mírné úpravy na hlavní stránce a doladění drobnosti u       Přihlášení/Registrace a trochu vtipně vypadající prototyp "logů".</p>
 <hr>
 <h3>Inspirace</h3>
 <p><img src="https://1t1rycb9er64f1pgy2iuseow-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/Task-board-1-900x499.png"></p>

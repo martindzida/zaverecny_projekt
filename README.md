@@ -1,4 +1,4 @@
-<h1>Na Matějově githubu (<a href="github.com/matejnesuta/zaverecny_projekt"><b>Odkaz zde</b></a>) je celistvá a hlavně funkční (avšak ještě ne hotová) aplikace v Dockeru; na mém githubu je pouze ukázka frontendu, jehož některé části nemusí být zcela funkční z důvodu absence backendu. Děkuji za pochopení. :></h1>
+<h1>Na Matějově githubu (<a href="github.com/matejnesuta/zaverecny-projekt"><b>Odkaz zde</b></a>) je celistvá a hlavně funkční (avšak ještě ne hotová) aplikace v Dockeru; na mém githubu je pouze ukázka frontendu, jehož některé části nemusí být zcela funkční z důvodu absence backendu. Děkuji za pochopení. :></h1>
 <h2>Závěrečný projekt - front-end webové aplikace</h2>
 <hr>
 <p>Cílem je vytvoření front-end webové aplikace s použitím javascriptové technologie React. Na projektu budu spolupracovat s <a href="https://github.com/matejnesuta">Matějem Nešutou</a>, který bude mít na starost back-end aplikace.</p>

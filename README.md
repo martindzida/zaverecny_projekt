@@ -1,3 +1,4 @@
+<h1>Na Matějově githubu (<a href="github.com/matejnesuta/zaverecny_projekt"><b>Odkaz zde</b></a>) je celistvá a hlavně funkční (avšak ještě ne hotová) aplikace v Dockeru; na mém githubu je pouze ukázka frontendu, jehož některé části nemusí být zcela funkční z důvodu absence backendu. Děkuji za pochopení. :></h1>
 <h2>Závěrečný projekt - front-end webové aplikace</h2>
 <hr>
 <p>Cílem je vytvoření front-end webové aplikace s použitím javascriptové technologie React. Na projektu budu spolupracovat s <a href="https://github.com/matejnesuta">Matějem Nešutou</a>, který bude mít na starost back-end aplikace.</p>
@@ -13,14 +14,16 @@
 </ul>
 <hr>
 <h3>Průběh práce</h3>
-<h4>Jaro 2020 - 24.9. 2020</h4>
+<h4>Jaro 2020 - 24. 9. 2020</h4>
   <p>Studium a poznávání nové technologie - React</p>
-<h4>24.9. 2020 - 29.9. 2020</h4>
+<h4>24. 9. 2020 - 29.9. 2020</h4>
   <p>Dokončení základu funkční Login stránky, která ovšem potřebuje ještě hodně péče a lásky</p>
- <h4>Začátek října - 19.10. 2020 </h4>
+ <h4>Začátek října - 19. 10. 2020 </h4>
   <p>Hotová Login a Registrační stránka (ne však ve finální podobě :>), hrubý základ hlavní stránky a nějaká snaha propojení s Matějovým backendem.</p>
  <h4>22.10. 2020</h4>
   <p>Zjištění přílišné ambicióznosti vlastního kalendáře, jehož realizace se tím pádem lehce odsouvá. Mírné úpravy na hlavní stránce a doladění drobnosti u       Přihlášení/Registrace a trochu vtipně vypadající prototyp "logů".</p>
+  <h4>23. 10. 2020 - konec října</h4>
+    <p>Druhotné zprovoznění registrace a příhlášení a další mírné vzhledové úpravy. Přidání verifikační stránky pro ověření emailu, které se už chystá.</p>
 <hr>
 <h3>Inspirace</h3>
 <p><img src="https://1t1rycb9er64f1pgy2iuseow-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/Task-board-1-900x499.png"></p>

@@ -18,12 +18,16 @@
   <p>Studium a poznávání nové technologie - React</p>
 <h4>24. 9. 2020 - 29.9. 2020</h4>
   <p>Dokončení základu funkční Login stránky, která ovšem potřebuje ještě hodně péče a lásky</p>
- <h4>Začátek října - 19. 10. 2020 </h4>
+ <h4>Začátek října 2020 - 19. 10. 2020 </h4>
   <p>Hotová Login a Registrační stránka (ne však ve finální podobě :>), hrubý základ hlavní stránky a nějaká snaha propojení s Matějovým backendem.</p>
  <h4>22.10. 2020</h4>
   <p>Zjištění přílišné ambicióznosti vlastního kalendáře, jehož realizace se tím pádem lehce odsouvá. Mírné úpravy na hlavní stránce a doladění drobnosti u       Přihlášení/Registrace a trochu vtipně vypadající prototyp "logů".</p>
-  <h4>23. 10. 2020 - konec října</h4>
+  <h4>23. 10. 2020 - konec října 2020</h4>
     <p>Druhotné zprovoznění registrace a příhlášení a další mírné vzhledové úpravy. Přidání verifikační stránky pro ověření emailu, které se už chystá.</p>
+  <h4>Začátek listopadu 2020 - 6. 11. 2020</h4>
+    <p>Doladění přihlášení a registrace, oprava drobných chyb, zprovoznění ověřování registrace emailem pomocí klíče</p>
+   <h4>8. 11. 2020</h4>
+   <p>Především grafické úpravy, například Navbar.</p>
 <hr>
 <h3>Inspirace</h3>
 <p><img src="https://1t1rycb9er64f1pgy2iuseow-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/Task-board-1-900x499.png"></p>

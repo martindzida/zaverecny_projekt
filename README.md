@@ -32,7 +32,7 @@
  <h4>9. 11. 2020</h4>
    <p>Práce na formulářích - grafické vylepšení za použití Boostrapu. Příprava na zkoušku změny profilových údajů.</p>
  <h4>10. 11. 2020</h4>
-  <p>Frontendová validace hesla při registraci. Kontrola typu souboru při nahrávání profilového obrázku. A hlavně důležité uvědomění, že budu muset použít knihovnu <u><a href="https://redux.js.org/">Redux</a></u>.</p>
+  <p>Frontendová validace hesla při registraci. Kontrola typu souboru při nahrávání profilového obrázku. A hlavně důležité uvědomění, že budu muset použít knihovnu <a href="https://redux.js.org/">Redux</a>.</p>
 <hr>
 <h3>Inspirace</h3>
 <p><img src="https://1t1rycb9er64f1pgy2iuseow-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/Task-board-1-900x499.png"></p>

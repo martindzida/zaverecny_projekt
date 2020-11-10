@@ -1,7 +1,7 @@
 <h1>Na Matějově githubu (<a href="github.com/matejnesuta/zaverecny-projekt"><b>https://github.com/matejnesuta/zaverecny-projekt</b></a>) je celistvá a hlavně funkční (avšak ještě ne hotová) aplikace v Dockeru; na mém githubu je pouze ukázka frontendu, jehož některé části nemusí být zcela funkční z důvodu absence backendu. Děkuji za pochopení. :></h1>
 <h2>Závěrečný projekt - front-end webové aplikace</h2>
 <hr>
-<p>Cílem je vytvoření front-end webové aplikace s použitím javascriptové technologie React. Na projektu budu spolupracovat s <a href="https://github.com/matejnesuta">Matějem Nešutou</a>, který bude mít na starost back-end aplikace.</p>
+<p>Cílem je vytvoření front-end webové aplikace s použitím javascriptové technologie React s pomocí dalších knihoven. Na projektu budu spolupracovat s <a href="https://github.com/matejnesuta">Matějem Nešutou</a>, který bude mít na starost back-end aplikace.</p>
 <hr>
 <h3>Postupné cíle práce:</h3>
 <ul>
@@ -11,6 +11,7 @@
   <li><b>Hlavní stránka = spousta věcí</b></li>
   <li><b>Detail příspěvků</b></li>
   <li><i>A nejspíš ještě mnoho dalších... :> </i></li>
+  <li><i>ehm ehm...</i> <b>Tento seznam je hodně nerealistický</b></li>
 </ul>
 <hr>
 <h3>Průběh práce</h3>
@@ -30,6 +31,8 @@
    <p>Především grafické úpravy, například Navbar.</p>
  <h4>9. 11. 2020</h4>
    <p>Práce na formulářích - grafické vylepšení za použití Boostrapu. Příprava na zkoušku změny profilových údajů.</p>
+ <h4>10. 11. 2020</h4>
+  <p>Frontendová validace hesla při registraci. Kontrola typu souboru při nahrávání profilového obrázku. A hlavně důležité uvědomění, že budu muset použít knihovnu <u><a href="https://redux.js.org/">Redux</a></u>.</p>
 <hr>
 <h3>Inspirace</h3>
 <p><img src="https://1t1rycb9er64f1pgy2iuseow-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/Task-board-1-900x499.png"></p>

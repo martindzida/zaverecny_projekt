@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 
 class Login extends Component {
   state = {
     email: "",
     password: "",
-    loginError: false,
+    token: "",
+    error: "",
+    redirect: false,
   };
 
   handleChange = (event) => {
@@ -19,31 +22,32 @@ class Login extends Component {
   handleSubmit = (event) => {
     axios
       .post(
-        "localhost:8000/auth/login/",
+        "/auth/login/",
         { email: this.state.email, password: this.state.password },
         { withCredentials: true }
       )
       .then((response) => {
+        this.setState({
+          token: response.data.key,
+        });
         console.log(response);
       })
       .catch((error) => {
+        this.setState({
+          error: error,
+        });
         console.log(error);
       });
     event.preventDefault();
+    this.setState({
+      redirect: true,
+    });
   };
 
-  authError() {
-    if (this.state.loginError) {
-      return (
-        <div className="col-12 p-2">
-          <span className="badge badge-pill badge-danger m-1">!</span>
-          <small className="text-danger">Nesprávné heslo nebo email.</small>
-        </div>
-      );
-    }
-  }
-
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
+    }
     return (
       <div>
         <Navbar isLoggedIn={false} />
@@ -62,9 +66,6 @@ class Login extends Component {
                   </div>
                   <div className="col-8">
                     <input
-                      style={{
-                        borderColor: this.state.loginError ? "red" : "",
-                      }}
                       type="email"
                       name="email"
                       id="log_email"
@@ -84,9 +85,6 @@ class Login extends Component {
                   </div>
                   <div className="col-8">
                     <input
-                      style={{
-                        borderColor: this.state.loginError ? "red" : "",
-                      }}
                       type="password"
                       name="password"
                       id="log_password"
@@ -96,7 +94,6 @@ class Login extends Component {
                       onChange={this.handleChange}
                       required
                     ></input>
-                    <div>{this.authError()}</div>
                   </div>
                 </div>
                 <div className="row m-3">

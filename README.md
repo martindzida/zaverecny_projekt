@@ -12,6 +12,8 @@
   <li><b>Detail příspěvků</b></li>
   <li><i>A nejspíš ještě mnoho dalších... :> </i></li>
   <li><i>ehm ehm...</i> <b>Tento seznam je hodně nerealistický</b></li>
+  <br>
+  <li><i>Pozn.: Mé "já" z minulosti mělo pravdu, je naprosto nerealistický a také nesmyslný. (ale když to muselo být...)Teď se nad ním mohu alespoň pousmát.</i></li>
 </ul>
 <hr>
 <h3>Průběh práce</h3>
@@ -33,6 +35,8 @@
    <p>Práce na formulářích - grafické vylepšení za použití Boostrapu. Příprava na zkoušku změny profilových údajů.</p>
  <h4>10. 11. 2020</h4>
   <p>Frontendová validace hesla při registraci. Kontrola typu souboru při nahrávání profilového obrázku. A hlavně důležité uvědomění, že budu muset použít knihovnu <a href="https://redux.js.org/">Redux</a>.</p>
+  <h4>Druhá polovina listopadu 2020 - 24.11. 2020 </h4>
+  <p>Většinu času jsem se snažil pochopit Redux a s ním spojený i React Redux. Toto snažení mě stálo mnoho psychických sil, ale i času. Dnes jsem ve fázi, kdy ještě plně nerozumím veškerým funkcím této knihovny, ale už vesměs chápu systém, jakým funguje. Dokonce se mi nakonec podařil Redux zprovoznit, ale ještě to bude chtít mnohé doladit, i přesto to však pokládám za úspěch.</p>
 <hr>
 <h3>Inspirace</h3>
 <p><img src="https://1t1rycb9er64f1pgy2iuseow-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/Task-board-1-900x499.png"></p>

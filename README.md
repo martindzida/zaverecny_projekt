@@ -35,10 +35,10 @@
    <p>Práce na formulářích - grafické vylepšení za použití Boostrapu. Příprava na zkoušku změny profilových údajů.</p>
  <h4>10. 11. 2020</h4>
   <p>Frontendová validace hesla při registraci. Kontrola typu souboru při nahrávání profilového obrázku. A hlavně důležité uvědomění, že budu muset použít knihovnu <a href="https://redux.js.org/">Redux</a>.</p>
-  <h4>Druhá polovina listopadu 2020 - 5. 12. 2020</h4>
-  <p>Konečně jsem optimálně využil Redux, takže by už s ním neměly být žádné problémy. Vylepšení routování (React Router), přidání nových stránek (některé avšak nedokončené) a nových urls, správné vykreslování logů a k ním příslušným komentářům, drobné grafické i jiné úpravy, práce na přidávání skupin.</p>
   <h4>Druhá polovina listopadu 2020 - 24.11. 2020 </h4>
   <p>Většinu času jsem se snažil pochopit Redux a s ním spojený i React Redux. Toto snažení mě stálo mnoho psychických sil, ale i času. Dnes jsem ve fázi, kdy ještě plně nerozumím veškerým funkcím této knihovny, ale už vesměs chápu systém, jakým funguje. Dokonce se mi nakonec podařil Redux zprovoznit, ale ještě to bude chtít mnohé doladit, i přesto to však pokládám za úspěch.</p>
+   <h4>Konec listopadu 2020 - 5. 12. 2020</h4>
+  <p>Konečně jsem optimálně využil Redux, takže by už s ním neměly být žádné problémy. Vylepšení routování (React Router), přidání nových stránek (některé avšak nedokončené) a nových urls, správné vykreslování logů a k ním příslušným komentářům, drobné grafické i jiné úpravy, práce na přidávání skupin.</p>
 <hr>
 <h3>Inspirace</h3>
 <p><img src="https://1t1rycb9er64f1pgy2iuseow-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/Task-board-1-900x499.png"></p>

@@ -3,19 +3,6 @@
 <hr>
 <p>Cílem je vytvoření front-end webové aplikace s použitím javascriptové technologie React s pomocí dalších knihoven. Na projektu budu spolupracovat s <a href="https://github.com/matejnesuta">Matějem Nešutou</a>, který bude mít na starost back-end aplikace.</p>
 <hr>
-<h3>Postupné cíle práce:</h3>
-<ul>
-  <li><b>Login/sign in stránka</b> <i>(v průběhu)</i></li>
-  <li><b>Úvodní stránka</b></li>
-  <li><b>Profilová stránka</b></li>
-  <li><b>Hlavní stránka = spousta věcí</b></li>
-  <li><b>Detail příspěvků</b></li>
-  <li><i>A nejspíš ještě mnoho dalších... :> </i></li>
-  <li><i>ehm ehm...</i> <b>Tento seznam je hodně nerealistický</b></li>
-  <br>
-  <li><i>Pozn.: Mé "já" z minulosti mělo pravdu, je naprosto nerealistický a také nesmyslný. (ale když to muselo být...)Teď se nad ním mohu alespoň pousmát.</i></li>
-</ul>
-<hr>
 <h3>Průběh práce</h3>
 <h4>Jaro 2020 - 24. 9. 2020</h4>
   <p>Studium a poznávání nové technologie - React</p>
@@ -41,6 +28,8 @@
   <p>Konečně jsem optimálně využil Redux, takže by už s ním neměly být žádné problémy. Vylepšení routování (React Router), přidání nových stránek (některé avšak nedokončené) a nových urls, správné vykreslování logů a k ním příslušným komentářům, drobné grafické i jiné úpravy, práce na přidávání skupin.</p>
   <h4>6. 12. 2020</h4>
   <p>Zhotovení třídění logů a k nim příslušným komentářů, drobné grafické úpravy, přidání modálního okna, avšak prozatím bez implementace a zkoumání nahrávní obrázků a souborů,protože tahle věc mi už dlouho nefunguje a způsobila mi nemalé psychické trápení.</p>
+  <h4>7. 12. a 8. 12. 2020</h4>
+  <p>Nahrávání souborů je už funkční. Implementoval jsem modální okno, které ještě ovšem neplní žádnou úlohu, ale i tak je to částečný úspěch. Vytvoření formuláře pro založení skupiny.</p>
 <hr>
 <h3>Inspirace</h3>
 <p><img src="https://1t1rycb9er64f1pgy2iuseow-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/Task-board-1-900x499.png"></p>

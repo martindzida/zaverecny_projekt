@@ -14,6 +14,7 @@ import Page404 from "./components/Page404";
 
 function App() {
   return (
+    //Routování pomocí React Router
     <Router>
       <div className="App">
         <Switch>

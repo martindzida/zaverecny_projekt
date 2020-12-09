@@ -20,7 +20,7 @@ class Board extends Component {
     year: 2020,
   };
 
-  //metoda pro změnu roku dozadu
+  //Metoda pro změnu roku dozadu
   handleYearDecrement = () => {
     if (this.state.year > 2010) {
       this.setState({
@@ -29,7 +29,7 @@ class Board extends Component {
     }
   };
 
-  //metoda pro změnu roku dopředu
+  //Metoda pro změnu roku dopředu
   handleYearIncrement = () => {
     let cur_date = new Date();
     let cur_month = cur_date.getMonth();
@@ -45,7 +45,7 @@ class Board extends Component {
     }
   };
 
-  //metoda pro změnu měsíce dozadu
+  //Metoda pro změnu měsíce dozadu
   handleMonthDecrement = () => {
     if (this.state.monthIndex === 0 && this.state.year > 2010) {
       this.setState({
@@ -63,6 +63,7 @@ class Board extends Component {
 
   //metoda pro změnu měsíce dopředu
   handleMonthIncrement = () => {
+    //Práce s aktuálním datem
     let cur_date = new Date();
     let cur_month = cur_date.getMonth();
     let max_year = cur_date.getFullYear();

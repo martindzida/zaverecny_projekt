@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import SubmitButton from "./SubmitButton";
-import RegModal from "./RegModal";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import RegModal from "./Modals";
 
 class Registration extends Component {
   state = {
@@ -24,6 +24,7 @@ class Registration extends Component {
   };
 
   handleSubmit = (event) => {
+    event.preventDefault();
     if (this.state.password1.localeCompare(this.state.password2) !== 0) {
       axios
         .post("/auth/registration/", {
@@ -40,7 +41,6 @@ class Registration extends Component {
           });
           console.log(error);
         });
-      event.preventDefault();
     }
     this.setState({
       //redirect: true,
@@ -62,6 +62,7 @@ class Registration extends Component {
 
     return (
       <div>
+        <RegModal show={this.state.modal} />
         <Navbar isLoggedIn={false} />
         <div className="container">
           <div className="row center p-3 m-5">
@@ -136,7 +137,7 @@ class Registration extends Component {
                   {passwordsComp}
                 </div>
               </div>
-              <SubmitButton />
+              <SubmitButton text="Odeslat" />
             </form>
           </div>
         </div>

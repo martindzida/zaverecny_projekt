@@ -24,32 +24,29 @@ class Login extends Component {
   };
 
   handleSubmit = (event) => {
-    /*axios
+      event.preventDefault();
+      axios
     .post(
       "/auth/login/",
       { email: this.state.email, password: this.state.password },
       { withCredentials: true }
     )
     .then((response) => {
-      console.log(response);
+      this.props.getToken(response.data.key)
     })
-    .then((data) =>
-      this.setState({
-        token: data.key
-      })
-    )
     .catch((error) => {
       this.setState({
         error: error,
       });
-      console.log(error); */
-    fetch("https://jsonplaceholder.typicode.com/users/2")
-      .then((response) => response.json())
-      .then((data) => this.props.getToken(data.name));
-    event.preventDefault();
-    this.setState({
-      redirect: true,
-    });
+      console.log(error);
+    // fetch("https://jsonplaceholder.typicode.com/users/2")
+    //   .then((response) => response.json())
+    //   .then((data) => this.props.getToken(data.name));
+    // event.preventDefault();
+    // this.setState({
+    //   redirect: true,
+    // });
+  });
   };
 
   render() {
@@ -117,7 +114,7 @@ class Login extends Component {
                 </div>
                 <div className="col-3">{invalidPassword}</div>
               </div>
-              <SubmitButton />
+              <SubmitButton text="Odeslat" />
               <div className="row m-3">
                 <div className="col-12">
                   <button type="submit" className="btn btn-danger m-1">

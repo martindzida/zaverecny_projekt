@@ -1,5 +1,6 @@
 import { GET_TOKEN } from "../actions/types";
 
+//Defaultní stav
 const initialState = {
   token: "",
 };

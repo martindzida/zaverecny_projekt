@@ -14,9 +14,13 @@ import Page404 from "./components/Page404";
 
 function App() {
   return (
+    //Routování pomocí React Router
     <Router>
       <div className="App">
+        //Switch umožňuje vyhrazení "přesné url" díky parametru "exact" - bez tohoto parametru by každá url, navazující na základní stránku, (např. /login/123)
+        //zobrazovala původní stránku (Router by navazující urls v podstatě ignoroval)
         <Switch>
+          //Jednotlivé paths
           <Route path="/login" component={Login} />
           <Route path="/registration" component={Registration} />
           <Route path="/verification" component={Verification} />

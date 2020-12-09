@@ -17,7 +17,10 @@ function App() {
     //Routování pomocí React Router
     <Router>
       <div className="App">
+        //Switch vyhrazuje přesné adresy díky parametru "exact" - bez tohoto parametru by každá url, navazující na základní stránku, (např. profile/123) vedla
+        // na tu samou stránku
         <Switch>
+          //Jednotlivé paths
           <Route path="/login" component={Login} />
           <Route path="/registration" component={Registration} />
           <Route path="/verification" component={Verification} />

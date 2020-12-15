@@ -31,6 +31,11 @@
   <h4>7. 12. a 8. 12. 2020</h4>
   <p>Nahrávání souborů je už funkční. Implementoval jsem modální okno, které ještě ovšem neplní žádnou úlohu, ale i tak je to částečný úspěch. Vytvoření formuláře pro založení skupiny.</p>
 <hr>
+<h3>Možnosti do budoucna</h3>
+<ul>
+  <li>Optimalizace kódu</li>
+</ul>
+<hr>
 <h3>Inspirace</h3>
 <p><img src="https://1t1rycb9er64f1pgy2iuseow-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/Task-board-1-900x499.png"></p>
 <p><img src="https://cdn.discordapp.com/attachments/495633595713454105/707280017742364802/Marketing___MeisterTask_-_Google_Chrome_2019-01-24_09.png"></p>

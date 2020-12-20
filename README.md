@@ -30,6 +30,8 @@
   <p>Zhotovení třídění logů a k nim příslušným komentářů, drobné grafické úpravy, přidání modálního okna, avšak prozatím bez implementace a zkoumání nahrávní obrázků a souborů,protože tahle věc mi už dlouho nefunguje a způsobila mi nemalé psychické trápení.</p>
   <h4>7. 12. a 8. 12. 2020</h4>
   <p>Nahrávání souborů je už funkční. Implementoval jsem modální okno, které ještě ovšem neplní žádnou úlohu, ale i tak je to částečný úspěch. Vytvoření formuláře pro založení skupiny.</p>
+  <h4>9. 12. 2020 - 20. 12. 2020</h4>
+  <p>Práce na modálních oknech, několik z nich je funkčních. Možnost vytvoření (ne zcela hotové)/odstranění skupiny, odstranění uživatelů ze skupiny, změna názvu skupiny. Velké množství grafických úprav. Začátek práce na Boardu, začátek práce na posledních stránkách, příprava na práci s daty z backendu (<small>Pozn.: S ohledem na mé technické možnosti jsem zatím moc nevyužíval backendu, jelikož bych musel celý projekt spouštět přes Docker. Tudíž bych musel po každé malé změně restartovat docker, což by s mým PC zabralo několik desítek sekund. V celkovém součtu, kdy bych po jakékoliv malé grafické změně musel takhle dlouho čekat, by mě to stálo hodně cenného času, takže jsem se rozhodl pracovat pouze s frontendem do té doby, než se mi podaří doladit většina nezbytných věcí v oblasti frontendu, a teprve až pak začnu pracovat s daty z backendu.</small>)</p>
 <hr>
 <h3>Možnosti do budoucna</h3>
 <ul>

@@ -44,6 +44,7 @@
 <hr>
 <h3>Odkazy:</h3>
 <p><a href="https://reactjs.org/">https://reactjs.org/</a></p>
+<p><a href="https://redux.js.org/">https://redux.js.org/</a></p>
 <p><a href="https://www.youtube.com/watch?v=Tn6-PIqc4UM">React in 100 Seconds</a></p>
 <p><a href="https://www.youtube.com/watch?v=Ke90Tje7VS0">React Tutorial for Beginners [React js]<a/></p>
 <p><a href="https://www.youtube.com/watch?v=sBws8MSXN7A">React JS Crash Course</a></p>

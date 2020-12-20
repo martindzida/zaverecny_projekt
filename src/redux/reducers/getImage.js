@@ -1,9 +1,7 @@
 import { GET_IMAGE } from "../actions/types";
 
 //Defaultní stav
-const initialState = {
-  image: {},
-};
+const initialState = {};
 
 //Reducer
 export default function (state = initialState, action) {
@@ -14,7 +12,7 @@ export default function (state = initialState, action) {
         ...state,
         image: action.payload,
       };
-    //Pokud se spustí jiná akce, reducer vrátí defaultní stav  
+    //Pokud se spustí jiná akce, reducer vrátí defaultní stav
     default:
       return state;
   }

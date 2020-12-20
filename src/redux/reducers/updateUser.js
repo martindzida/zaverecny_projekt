@@ -1,13 +1,15 @@
-import { GET_USER } from "../actions/types";
+import { UPDATE_USER } from "../actions/types";
 
 //Defaultní stav
-const initialState = {};
+const initialState = {
+  user: {},
+};
 
 //Reducer
 export default function (state = initialState, action) {
   //Reducer vykoná příslušnou akci
   switch (action.type) {
-    case GET_USER:
+    case UPDATE_USER:
       return {
         ...state,
         user: action.payload,

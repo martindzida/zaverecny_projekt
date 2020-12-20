@@ -4,27 +4,204 @@ import Group from "./Group";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import SubmitButton from "./SubmitButton";
-import { connect, useStore } from "react-redux";
+import GroupDelModal from "./modals/GroupDelModal";
+import GroupEditNameModal from "./modals/GroupEditNameModal";
+import { connect } from "react-redux";
 import { getUser } from "../redux/actions/actions";
-import {Link, animateScroll as scroll, scroller} from "react-scroll";
+import { Link } from "react-router-dom";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import store from "../redux/store";
 import axios from "axios";
 
 class Groups extends Component {
   state = {
     groups: [
-      <Group key={1} id={1} name="1" />,
-      <Group key={2} id={2} name="2" />,
-      <Group key={3} id={3} name="3" />,
-      <Group key={4} id={4} name="4" />,
-      <Group key={5} id={5} name="5" />,
-      <Group key={6} id={6} name="6" />,
+      <Group
+        key={1}
+        id={1}
+        name="1"
+        icon="floppy-o"
+        isOwner={true}
+        handleDelete={(id, name) => {
+          this.setState((prevState) => ({
+            deleteModal: {
+              ...prevState.deleteModal,
+              modal: true,
+              deleteId: id,
+              deleteName: name,
+            },
+          }));
+        }}
+        handleEdit={(id, name) => {
+          this.setState((prevState) => ({
+            editModal: {
+              ...prevState.editModal,
+              modal: true,
+              editId: id,
+              editName: name,
+            },
+          }));
+        }}
+      />,
+      <Group
+        key={2}
+        id={2}
+        name="Braník"
+        icon="grav"
+        isOwner={true}
+        handleDelete={(id, name) => {
+          this.setState((prevState) => ({
+            deleteModal: {
+              ...prevState.deleteModal,
+              modal: true,
+              deleteId: id,
+              deleteName: name,
+            },
+          }));
+        }}
+        handleEdit={(id, name) => {
+          this.setState((prevState) => ({
+            editModal: {
+              ...prevState.editModal,
+              modal: true,
+              editId: id,
+              editName: name,
+            },
+          }));
+        }}
+      />,
+      <Group
+        key={3}
+        id={3}
+        name="3"
+        icon="code"
+        isOwner={true}
+        handleDelete={(id, name) => {
+          this.setState((prevState) => ({
+            deleteModal: {
+              ...prevState.deleteModal,
+              modal: true,
+              deleteId: id,
+              deleteName: name,
+            },
+          }));
+        }}
+        handleEdit={(id, name) => {
+          this.setState((prevState) => ({
+            editModal: {
+              ...prevState.editModal,
+              modal: true,
+              editId: id,
+              editName: name,
+            },
+          }));
+        }}
+      />,
+      <Group
+        key={4}
+        id={4}
+        name="4"
+        icon="camera-retro"
+        isOwner={true}
+        handleDelete={(id, name) => {
+          this.setState((prevState) => ({
+            deleteModal: {
+              ...prevState.deleteModal,
+              modal: true,
+              deleteId: id,
+              deleteName: name,
+            },
+          }));
+        }}
+        handleEdit={(id, name) => {
+          this.setState((prevState) => ({
+            editModal: {
+              ...prevState.editModal,
+              modal: true,
+              editId: id,
+              editName: name,
+            },
+          }));
+        }}
+      />,
+      <Group
+        key={5}
+        id={5}
+        name="5"
+        icon="code"
+        isOwner={true}
+        handleDelete={(id, name) => {
+          this.setState((prevState) => ({
+            deleteModal: {
+              ...prevState.deleteModal,
+              modal: true,
+              deleteId: id,
+              deleteName: name,
+            },
+          }));
+        }}
+        handleEdit={(id, name) => {
+          this.setState((prevState) => ({
+            editModal: {
+              ...prevState.editModal,
+              modal: true,
+              editId: id,
+              editName: name,
+            },
+          }));
+        }}
+      />,
+      <Group
+        key={6}
+        id={6}
+        name="6"
+        icon="grav"
+        isOwner={false}
+        handleDelete={(id, name) => {
+          this.setState((prevState) => ({
+            deleteModal: {
+              ...prevState.deleteModal,
+              modal: true,
+              deleteId: id,
+              deleteName: name,
+            },
+          }));
+        }}
+        handleEdit={(id, name) => {
+          this.setState((prevState) => ({
+            editModal: {
+              ...prevState.editModal,
+              modal: true,
+              editId: id,
+              editName: name,
+            },
+          }));
+        }}
+      />,
     ],
     createGroup: false,
     name: "",
     icon: "",
     comment: "",
     search: "",
+    getSearchResult: [
+      { id: 1, imgSrc: "", name: "Prokop Buben" },
+      { id: 2, imgSrc: "", name: "Franta Brambor" },
+      { id: 3, imgSrc: "", name: "Dáááávid" },
+    ],
+    showSearchResult: false,
+    deleteModal: {
+      modal: false,
+      modalValue: null,
+      deleteId: null,
+      deleteName: "",
+    },
+    editModal: {
+      modal: false,
+      modalValue: null,
+      editId: null,
+      editName: "",
+    },
   };
 
   //Načtení skupin uživatele
@@ -33,7 +210,7 @@ class Groups extends Component {
       const groups = res.data;
       //Uložení pole komponentů Group do this.state.groups
       const receivedData = groups.map((group) => (
-        <Group key={group.id} id={group.id} name={group.name} />
+        <Group key={group.id} id={group.id} name={group.name} icon={group.icon}/>
       ));
       this.setState({
         logs: receivedData,
@@ -58,6 +235,7 @@ class Groups extends Component {
   };
 
   handleCloseForm = () => {
+    scroll.scrollToTop();
     this.setState({
       createGroup: false,
     });
@@ -75,40 +253,86 @@ class Groups extends Component {
     });
   };
 
-  addedUsers() {
-    let users = [];
-    return users;
-  }
+  handleSearch = (event) => {
+    event.preventDefault();
+    //axios.post()
+    //response => getSearchResult
+    this.setState({
+      showSearchResult: true,
+    });
+  };
 
-  scrollToTop = () => {
-    scroll.scrollToTop();
-  }
+  handleAddUser = () => {};
 
-  scrollTo() {
-    scroller.scrollTo("scroll-to-element", {
-      duration: 500,
-      delay: 0,
-      smooth: "easeInOutQuart"
-    })
-  }
+  getModalValue = (value, type) => {
+    if (type === "delete") {
+      this.setState((prevState) => ({
+        deleteModal: {
+          ...prevState.deleteModal,
+          modal: false,
+          modalValue: value,
+        },
+      }));
+    }
+    if (type === "edit") {
+      this.setState((prevState) => ({
+        editModal: {
+          ...prevState.editModal,
+          modal: false,
+          modalValue: value,
+        },
+      }));
+    }
+  };
 
   render() {
     let iconType = "fa fa-" + this.state.icon + " fa-4x";
     let newGroupForm;
+    let searchResult;
+    let results = this.state.getSearchResult;
+    let searchResultRow = results.map((obj) => (
+      //Link jinak než na tr
+      <tr key={obj.id} scope="row">
+        <td>
+          <img src={obj.imgSrc} alt="nejde to xd" />
+        </td>
+        <td> {obj.name}</td>
+        <td>
+          <button className="btn btn-success" onClick={this.handleAddUser}>
+            <i className="fa fa-user-plus" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+    ));
+
+    if (this.state.showSearchResult) {
+      searchResult = (
+        <div className="form-group row justify-content-center mt-4">
+          <div className="col-8 table-responsive">
+            <table className="table table-hover table-dark">
+              <thead className="thead-dark">
+                <tr scope="row">
+                  <th colSpan={12}>Výsledky vyhledávání</th>
+                </tr>
+              </thead>
+              <tbody>{searchResultRow}</tbody>
+            </table>
+          </div>
+        </div>
+      );
+    }
+
     if (this.state.createGroup) {
       newGroupForm = (
-        <div
-          id="createGroup"
-          className="card center m-5 px-5 py-3 bg-dark border-primary text-light"
-        >
+        <div className="card center m-5 px-5 py-3 bg-dark border-primary text-white">
           <div className="ml-auto">
             <button className="btn" onClick={this.handleCloseForm}>
-                <i
-                  className="fa fa-times fa-2x"
-                  aria-hidden="true"
-                  style={{ color: "white" }}
-                ></i>
-              </button>        
+              <i
+                className="fa fa-times fa-2x"
+                aria-hidden="true"
+                style={{ color: "white" }}
+              ></i>
+            </button>
           </div>
           <div className="row center p-2 mb-5">
             <div className="col-12">
@@ -155,7 +379,7 @@ class Groups extends Component {
                   <option value="wpexplorer">Telescope</option>
                   <option value="camera-retro">Camera</option>
                   <option value="code">Code</option>
-                  <option value="diamond">Diamond</option>
+                  <option value="floppy-o">Floppy</option>
                 </select>
               </div>
               <div className="col-2">
@@ -188,7 +412,7 @@ class Groups extends Component {
                   Přidat uživatele
                 </label>
               </div>
-              <div className="col-4 input-group">
+              <div className="col-8 input-group">
                 <input
                   type="text"
                   name="search"
@@ -202,6 +426,7 @@ class Groups extends Component {
                   <button
                     className="btn"
                     style={{ backgroundColor: "#209cee" }}
+                    onClick={this.handleSearch}
                   >
                     <i
                       className="fa fa-search"
@@ -212,6 +437,7 @@ class Groups extends Component {
                 </span>
               </div>
             </div>
+            {searchResult}
             <SubmitButton text="Potvrdit" />
           </form>
         </div>
@@ -220,13 +446,37 @@ class Groups extends Component {
 
     return (
       <div>
-        <Navbar isLoggedIn={true} id="xd"/>
+        <GroupDelModal
+          show={this.state.deleteModal.modal}
+          onHide={() => {
+            this.setState((prevState) => ({
+              deleteModal: {
+                ...prevState.deleteModal,
+                modal: false,
+              },
+            }));
+          }}
+          value={this.getModalValue}
+          name={this.state.deleteModal.deleteName}
+        />
+        <GroupEditNameModal
+          show={this.state.editModal.modal}
+          onHide={() => {
+            this.setState((prevState) => ({
+              editModal: {
+                ...prevState.editModal,
+                modal: false,
+              },
+            }));
+          }}
+          value={this.getModalValue}
+          name={this.state.editModal.editName}
+        />
+        <Navbar isLoggedIn={true} />
         <div className="container">
           <div className="row center p-3 m-4">
             <div className="col-12">
-              <div className="p-3 m-4">
-                <h1>Vaše skupiny</h1>
-              </div>
+              <h1>Vaše skupiny</h1>
             </div>
           </div>
           <div className="row center p-3 m-4 justify-content-center">
@@ -234,7 +484,12 @@ class Groups extends Component {
           </div>
           <div className="row center p-3 m-4">
             <div className="col-12">
-              <a href="#createGroup">
+              <ScrollLink
+                activeClass="active"
+                to="createGroup"
+                smooth={true}
+                duration={600}
+              >
                 <button
                   className="btn btn-success p-2"
                   onClick={this.handleOpenForm}
@@ -242,17 +497,15 @@ class Groups extends Component {
                   <i className="fa fa-plus m-1" aria-hidden="true"></i> Vytvořit
                   skupinu
                 </button>
-              </a>
+              </ScrollLink>
             </div>
           </div>
-          {newGroupForm}
+          <div name="createGroup">{newGroupForm}</div>
         </div>
         <Footer />
       </div>
     );
   }
 }
-//https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/index.html
-//https://www.digitalocean.com/community/tutorials/how-to-implement-smooth-scrolling-in-react
 
 export default connect(null, { getUser })(Groups);

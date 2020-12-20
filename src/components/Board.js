@@ -98,7 +98,7 @@ class Board extends Component {
               onClick={this.handleYearDecrement}
             >
               <i
-                className="fa fa-angle-double-left fa-4x"
+                className="fa fa-angle-double-left fa-3x"
                 aria-hidden="true"
                 style={{ color: "white" }}
               ></i>
@@ -111,7 +111,7 @@ class Board extends Component {
               onClick={this.handleMonthDecrement}
             >
               <i
-                className="fa fa-angle-left fa-4x"
+                className="fa fa-angle-left fa-3x"
                 aria-hidden="true"
                 style={{ color: "white" }}
               ></i>
@@ -129,7 +129,7 @@ class Board extends Component {
               onClick={this.handleMonthIncrement}
             >
               <i
-                className="fa fa-angle-right fa-4x"
+                className="fa fa-angle-right fa-3x"
                 aria-hidden="true"
                 style={{ color: "white" }}
               ></i>
@@ -142,7 +142,7 @@ class Board extends Component {
               onClick={this.handleYearIncrement}
             >
               <i
-                className="fa fa-angle-double-right fa-4x"
+                className="fa fa-angle-double-right fa-3x"
                 aria-hidden="true"
                 style={{ color: "white" }}
               ></i>
@@ -152,7 +152,18 @@ class Board extends Component {
         <div className="row m-4">
           <div className="col-12">
             <table className="table">
-              <tbody></tbody>
+              <thead>
+                <tr scope="row">
+                  <th className="bg-info">Neodstartováno</th>
+                  <th className="bg-danger">V průběhu</th>
+                  <th className="bg-warning">Pozastaveno</th>
+                  <th className="bg-primary">Dokončuje se</th>
+                  <th className="bg-success">Hotovo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr></tr>
+              </tbody>
             </table>
           </div>
         </div>

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Board from "./Board";
 import UpdateLog from "./UpdateLog";
-import LogComment from "./LogComment";
 import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
 import Footer from "./Footer";
+import UserRemoveModal from "./modals/UserRemoveModal";
 import woke from "../images/woke.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -15,56 +16,18 @@ class Main extends Component {
       <UpdateLog key={5} id={5} imgSrc={woke} name="Buben" content="WP" />,
       <UpdateLog key={7} id={7} imgSrc={woke} name="Lukáš" content="GLHF" />,
     ],
-    comments: [
-      <LogComment
-        key={1}
-        id={1}
-        parentId={1}
-        imgSrc={woke}
-        name="Šustr"
-        content="LOL"
-      />,
-      <LogComment
-        key={2}
-        id={2}
-        parentId={1}
-        imgSrc={woke}
-        name="Honza"
-        content="XD"
-      />,
-      <LogComment
-        key={3}
-        id={3}
-        parentId={1}
-        imgSrc={woke}
-        name="Brambor"
-        content="MonkaS"
-      />,
-      <LogComment
-        key={4}
-        id={4}
-        parentId={5}
-        imgSrc={woke}
-        name="Šustr"
-        content="LOL"
-      />,
-      <LogComment
-        key={5}
-        id={5}
-        parentId={7}
-        imgSrc={woke}
-        name="Honza"
-        content="XD"
-      />,
-      <LogComment
-        key={6}
-        id={6}
-        parentId={7}
-        imgSrc={woke}
-        name="Brambor"
-        content="MonkaS"
-      />,
+    users: [
+      { key: 1, id: 1, imgSrc: "", name: "Franta Vopršálek" },
+      { key: 2, id: 2, imgSrc: "", name: "Pepa Zdepa" },
+      { key: 3, id: 3, imgSrc: "", name: "Karel Jednička" },
+      { key: 4, id: 4, imgSrc: "", name: "Franta Vopršálek" },
+      { key: 5, id: 5, imgSrc: "", name: "Pepa Zdepa" },
+      { key: 6, id: 6, imgSrc: "", name: "Karel Jednička" },
     ],
+    modal: false,
+    modalValue: null,
+    removeUserId: null,
+    removeUserName: "",
   };
 
   //Načtení dat z backendu
@@ -88,9 +51,9 @@ class Main extends Component {
     });
   }*/
 
-  //Metoda na seřazení logů a k ním příslušným komentářům
+  //Metoda na seřazení logů a k ním příslušným komentářům, která je teď naprosto zbytečná :))))))
 
-  postSorting() {
+  /*postSorting() {
     let output = [];
     let logs = this.state.logs;
     let comments = this.state.comments;
@@ -116,29 +79,53 @@ class Main extends Component {
     });
 
     return output;
-  }
+  }*/
+
+  getModalValue = (value) => {
+    this.setState({
+      modal: false,
+      modalValue: value,
+    });
+  };
 
   render() {
-    console.log(this.state.logs);
     return (
       <div>
+        <UserRemoveModal
+          show={this.state.modal}
+          value={this.getModalValue}
+          name={this.state.removeUserName}
+        />
         <Navbar isLoggedIn={true} />
-        <div className="container">
-          <div className="p-3 m-5">
-            <Board />
-          </div>
-          <div className="row p-3 m-5">
-            <div className="col-12">{this.postSorting()}</div>
-          </div>
-          <div className="row center p-3 m-4">
-            <div className="col-12">
-              <button className="btn btn-success p-2">
-                <i className="fa fa-plus m-1" aria-hidden="true"></i> Přidat
-                příspěvek
-              </button>
+        <div className="wrapper">
+          <Sidebar
+            users={this.state.users}
+            handleRemoveUser={(id, name) => {
+              this.setState({
+                modal: true,
+                removeUserId: id,
+                removeUserName: name,
+              });
+            }}
+          />
+          <div className="container">
+            <div className="p-3 m-5">
+              <Board />
+            </div>
+            <div className="row p-3 m-5">
+              <div className="col-12">{this.state.logs}</div>
+            </div>
+            <div className="row center p-3 m-4">
+              <div className="col-12">
+                <button className="btn btn-success p-2">
+                  <i className="fa fa-plus m-1" aria-hidden="true"></i> Přidat
+                  příspěvek
+                </button>
+              </div>
             </div>
           </div>
         </div>
+
         <Footer />
       </div>
     );

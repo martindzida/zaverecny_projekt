@@ -1,0 +1,198 @@
+.center {
+  text-align: center;
+}
+
+#root {
+  background-color: #161616;
+  color: white;
+}
+
+.container {
+  border-bottom: #209cee 1px solid;
+}
+
+textarea {
+  border-radius: 5px;
+  resize: none !important;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  background-color: white;
+}
+
+.badge {
+  border-radius: 50%;
+}
+
+.comments {
+  border-radius: 5px;
+  border-left: #209cee 5px solid;
+}
+
+.logs {
+  border-radius: 5px;
+}
+
+.logs-header {
+  font-weight: 500;
+  border-bottom: #209cee 1px solid;
+}
+
+.logs-footer {
+  font-size: 0.9em;
+}
+
+.group-name {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+footer {
+  text-align: center;
+  background-color: #2a2a2a;
+}
+
+.navbar {
+  color: white;
+  background-color: #2a2a2a;
+  font-size: 1.3em;
+  font-weight: 500;
+  border-bottom: #209cee 4px solid;
+}
+
+nav li a {
+  color: white;
+}
+
+nav li a:hover {
+  color: #209cee;
+}
+
+.dark {
+  color: white;
+  background-color: #2a2a2a;
+}
+
+nav li .dropdown {
+  font-weight: 600;
+}
+
+.fa-trash {
+  color: white;
+}
+
+.fa-trash:hover {
+  color: #ff3232;
+}
+
+.fa-user-times {
+  color: #161616;
+}
+
+.fa-user-times:hover {
+  color: #ff3232;
+}
+
+.fa-pencil-square-o {
+  color: white;
+}
+
+.fa-pencil-square-o:hover {
+  color: #209cee;
+}
+
+.fa-wrench {
+  color: #161616;
+}
+
+.fa-ellipsis-v {
+  color: white;
+}
+
+.fa-ellipsis-v:hover {
+  color: #209cee;
+}
+
+.modal-header {
+  text-align: center;
+  color: white;
+  background-color: #209cee;
+}
+
+.modal-body {
+  text-align: center;
+  color: white;
+  background-color: #2a2a2a;
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+#sidebar {
+  color: white;
+  background-color: #2a2a2a;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.sidebar-header {
+  text-align: center;
+  border-bottom: #209cee 1px solid;
+}
+
+.sidebar-body {
+  text-align: left;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.filebar {
+  color: white;
+  background-color: #202020;
+  border: #209cee 1px solid;
+  border-radius: 4px;
+}
+
+h1 {
+  font-size: 3em !important;
+  font-weight: 700 !important;
+}
+
+h2 {
+  font-size: 2.5em !important;
+  font-weight: 700 !important;
+}
+
+tr {
+  text-align: center;
+}
+
+.task-name {
+  font-size: 0.9em;
+}
+
+.task-body {
+  font-size: 0.8em;
+}
+
+.task-card {
+  color: white;
+  background-color: #2a2a2a;
+  border-left: #209cee 4px solid;
+  border-radius: 4px;
+}
+
+.user-card {
+  color: white;
+  background-color: #2a2a2a;
+  border-top: #209cee 3px solid;
+  border-radius: 4px;
+}
+
+html {
+  background-color: #2a2a2a;
+}

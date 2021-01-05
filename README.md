@@ -39,6 +39,7 @@
 <ul>
   <li>Optimalizace kódu</li>
   <li>Vylepšení mobilního zobrazení</li>
+  <li>Vytvoření vlastních grafických prvků, např. logo</li>
 </ul>
 <hr>
 <h3>Inspirace</h3>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import BoardTable from "./BoardTable";
 
 class Board extends Component {
   state = {
@@ -16,8 +17,10 @@ class Board extends Component {
       "Listopad",
       "Prosinec",
     ],
-    monthIndex: 11,
-    year: 2020,
+    monthIndex: 0,
+    year: 2021,
+    tasks: this.props.tasks,
+    sortedTasks: [],
   };
 
   //Metoda pro změnu roku dozadu
@@ -88,6 +91,36 @@ class Board extends Component {
   };
 
   render() {
+    //Třídění úkolů
+    const stages = [
+      "not_started",
+      "in_progress",
+      "on_hold",
+      "almost_finished",
+      "done",
+    ];
+    const tasks = [...this.props.tasks];
+    //Roztřídění úkolů podle jejich fáze
+    const sortedTasks = stages.map((stage) =>
+      tasks.filter((task) => task.stage === stage)
+    );
+    let sortedRows = [];
+    //Zjištení počtu prvků největšího pole, který bude určovat počet řádků v tabulce
+    let arraysLength = 0;
+    sortedTasks.forEach((arr) => {
+      if (arr.length > arraysLength) {
+        arraysLength = arr.length;
+      }
+    });
+    //Seřazení úkolů do řádků, které jsou následně poslány do komponentu BoardTable
+    for (let i = 0; i < arraysLength; i++) {
+      let sortedRow = [];
+      sortedTasks.map((task) => {
+        sortedRow.push(task[i]);
+      });
+      sortedRows.push(sortedRow);
+    }
+
     return (
       <div>
         <div className="row p-3 m-3">
@@ -149,11 +182,11 @@ class Board extends Component {
             </button>
           </div>
         </div>
-        <div className="row m-4">
+        <div className="row mx-1 p-1 my-5">
           <div className="col-12">
-            <table className="table">
+            <table className="table table-dark table-bordered">
               <thead>
-                <tr scope="row">
+                <tr>
                   <th className="bg-info">Neodstartováno</th>
                   <th className="bg-danger">V průběhu</th>
                   <th className="bg-warning">Pozastaveno</th>
@@ -162,7 +195,7 @@ class Board extends Component {
                 </tr>
               </thead>
               <tbody>
-                <tr></tr>
+                <BoardTable data={sortedRows} year={2020} month={12} />
               </tbody>
             </table>
           </div>

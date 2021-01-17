@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import { Modal, Button, Row, Col, Form } from "react-bootstrap";
 
-class GroupEditNameModal extends Component {
+class UserRemoveModal extends Component {
   state = {
-    name: "",
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    this.props.value(this.state.name, "edit");
+    value: this.props.userRole,
   };
 
   handleChange = (event) => {
     this.setState({
-      name: event.target.value,
+      value: event.target.value,
     });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.value(this.state.value, "changeRole");
   };
 
   render() {
@@ -30,7 +30,7 @@ class GroupEditNameModal extends Component {
           <Row>
             <Col>
               <Modal.Title className="modal-title">
-                Upravit název skupiny
+                Nastavit roli {this.props.name}
               </Modal.Title>
             </Col>
           </Row>
@@ -39,11 +39,19 @@ class GroupEditNameModal extends Component {
           <Form onSubmit={this.handleSubmit}>
             <Form.Group>
               <Form.Control
-                type="text"
+                as="select"
                 value={this.state.name}
                 onChange={this.handleChange}
-                placeholder="Zadejte nový název skupiny"
-              />
+              >
+                <option value={this.props.userRole}>
+                  {this.props.userRole === "user" ? "Uživatel" : "Moderátor"}
+                </option>
+                <option
+                  value={this.props.userRole === "user" ? "moderator" : "user"}
+                >
+                  {this.props.userRole === "user" ? "Moderátor" : "Uživatel"}
+                </option>
+              </Form.Control>
             </Form.Group>
             <Button type="submit" variant="primary" className="px-5 mt-4 mx-4">
               Potvrdit
@@ -55,4 +63,4 @@ class GroupEditNameModal extends Component {
   }
 }
 
-export default GroupEditNameModal;
+export default UserRemoveModal;

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Modal, Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-class ProfModal extends Component {
+class PasswordResetModal extends Component {
   handleClick = (event) => {
     event.preventDefault();
     this.props.onHide();
@@ -21,20 +21,25 @@ class ProfModal extends Component {
           <Row>
             <Col>
               <Modal.Title className="modal-title">
-                Nastavení profilu proběhlo úspěšně!
+                Ověření profilu proběhlo úspěšně!
               </Modal.Title>
             </Col>
           </Row>
         </Modal.Header>
         <Modal.Body className="modal-body p-4">
-          Změny byly uloženy.
+          Nyní se můžete přihlásit.
           <br />
           <Button
             variant="primary"
             className="px-5 mt-4"
             onClick={this.handleClick}
           >
-            Rozumím
+            <Link
+              to="/login"
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              Pokračovat
+            </Link>
           </Button>
         </Modal.Body>
       </Modal>
@@ -42,4 +47,4 @@ class ProfModal extends Component {
   }
 }
 
-export default ProfModal;
+export default PasswordResetModal;

@@ -7,6 +7,7 @@ class RegModal extends Component {
     return (
       <Modal
         show={this.props.show}
+        onHide={this.props.onHide}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -24,11 +25,11 @@ class RegModal extends Component {
           Na Váš email byl zaslán email s verifikačním klíčem. Pro dokončení
           registrace zadejte po přesměrování klíč.
           <br />
-          {/*<Link to="/verification">*/}
-          <Button variant="primary" className="px-5 mt-4">
-            Pokračovat
-          </Button>
-          {/*</Link>*/}
+          <Link to="/verification">
+            <Button variant="primary" className="px-5 mt-4">
+              Pokračovat
+            </Button>
+          </Link>
         </Modal.Body>
       </Modal>
     );

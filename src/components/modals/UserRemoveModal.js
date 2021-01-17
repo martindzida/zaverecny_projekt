@@ -4,18 +4,19 @@ import { Modal, Button, Row, Col } from "react-bootstrap";
 class UserRemoveModal extends Component {
   answerYes = (event) => {
     event.preventDefault();
-    this.props.value(true);
+    this.props.value(true, "remove");
   };
 
   answerNo = (event) => {
     event.preventDefault();
-    this.props.value(false);
+    this.props.value(false, "remove");
   };
 
   render() {
     return (
       <Modal
         show={this.props.show}
+        onHide={this.props.onHide}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered

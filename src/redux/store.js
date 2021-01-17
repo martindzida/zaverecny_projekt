@@ -1,20 +1,14 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./reducers/index";
 import thunk from "redux-thunk";
-import user_icon from "../images/user_icon.jpg";
 
-//Defaultní stav storu
-const initialState = {
-  user: {
-    name: "Franta Brambor",
-    image: user_icon,
-  },
-};
+//Základní stav storu
+const initialState = {};
 
 //Rozšíření storu
 const middleware = [thunk];
 
-//Vytvoření storu metodou createStore, který příjmá spojení reducerů v podobě rootReducer, defaultní stav a rozšíření
+//Vytvoření storu metodou createStore, který příjmá spojení reducerů v podobě rootReducer, základní stav a rozšíření
 const store = createStore(
   rootReducer,
   initialState,

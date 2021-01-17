@@ -29,7 +29,7 @@ class Navbar extends Component {
         <li className="nav-item dropdown mx-2">
           <a
             className="nav-link dropdown-toggle"
-            href="/#"
+            href="/"
             id="navbarDropdownMenuLink"
             role="button"
             data-toggle="dropdown"
@@ -37,7 +37,7 @@ class Navbar extends Component {
             aria-expanded="false"
           >
             <img
-              src={store.getState().user.image}
+              src={store.getState().user.user.profile_pic}
               alt="profile_pic"
               width="40"
               height="40"
@@ -49,8 +49,12 @@ class Navbar extends Component {
             aria-labelledby="navbarDropdownMenuLink"
           >
             {/*Link bude na /users/:id*/}
-            <Link className="dropdown-item" to="/profile">
-              {store.getState().user.name}
+            <Link
+              className="dropdown-item text-dark"
+              to={`/users/${store.getState().user.user.id}`}
+            >
+              {store.getState().user.user.first_name}{" "}
+              {store.getState().user.user.last_name}
             </Link>
             <div className="dropdown-divider"></div>
             <Link className="dropdown-item" to="/groups">

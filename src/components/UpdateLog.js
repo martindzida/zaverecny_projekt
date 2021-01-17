@@ -22,13 +22,14 @@ class UpdateLog extends Component {
             </div>
           </Link>
           <br />
-          <Link to={`/logs/${this.props.id}`} style={{ color: "white" }}>
+          {/*Odkaz na stránku úkolu*/}
+          <Link to={`/tasks/${this.props.id}`} style={{ color: "white" }}>
             <div className="ml-5">{this.props.content}</div>
           </Link>
         </div>
         <br />
         <div className="logs-footer ml-auto px-2 p-1 text-muted">
-          13.11 2020
+          {this.props.timestamp}
         </div>
       </div>
     );

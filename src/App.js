@@ -15,7 +15,7 @@ import Homepage from "./components/Homepage";
 
 function App() {
   return (
-    //Routování pomocí React Router
+    //Routing pomocí React Router
     <Router>
       <div className="App">
         {
@@ -24,7 +24,7 @@ function App() {
         }
         <Switch>
           {
-            //Jednotlivé paths
+            //Jednotlivé URLs
           }
           <Route path="/login" component={Login} />
           <Route path="/registration" component={Registration} />
@@ -32,7 +32,7 @@ function App() {
           <Route path="/profile" component={Profile} />
           <Route path="/groups" exact component={Groups} />
           <Route path="/groups/:id" component={Main} />
-          <Route path="/logs/:id" exact component={Task} />
+          <Route path="/tasks/:id" exact component={Task} />
           <Route path="/users/:id" exact component={UserPage} />
           <Route path="/passwordreset" component={PasswordReset} />
           <Route path="/" exact component={Homepage} />

@@ -1,40 +1,29 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import woke from "../images/woke.jpg";
+import SidebarRow from "./SidebarRow";
 
 class Sidebar extends Component {
   state = {};
 
-  handleDelete = (event) => {
-    this.props.handleRemoveUser(
-      event.target.id,
-      this.props.users[event.target.id - 1].name
-    );
+  handleRemoveUser = (id, name) => {
+    this.props.handleRemoveUser(id, name);
+  };
+
+  handleChangeUserRole = (id, name, role) => {
+    this.props.handleChangeUserRole(id, name, role);
   };
 
   render() {
+    //
     let usersArr = this.props.users.map((user) => (
-      <div key={user.id} className="row p-1">
-        <div className="col-2">
-          <img
-            src={woke}
-            alt="hihi"
-            className="mr-2 p-1 img-responsive rounded-circle"
-            width={33}
-            height={33}
-          />
-        </div>
-        <div className="col-8">
-          <Link to={`/users/${user.id}`} style={{ color: "white" }}>
-            {user.name}
-          </Link>
-        </div>
-        <div className="col-2">
-          <button className="btn p-1 mx-2" onClick={this.handleDelete}>
-            <i className="fa fa-user-times" id={user.id} aria-hidden="true"></i>
-          </button>
-        </div>
-      </div>
+      <SidebarRow
+        key={user.id}
+        id={user.id}
+        name={user.name}
+        role={user.role}
+        //callback funkce pro vyvolání modálních oken
+        handleDelete={this.handleRemoveUser}
+        handleChangeRole={this.handleChangeUserRole}
+      />
     ));
     return (
       <nav id="sidebar" className="py-5 px-4">

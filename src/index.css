@@ -59,7 +59,7 @@ footer {
   background-color: #2a2a2a;
   font-size: 1.3em;
   font-weight: 500;
-  border-bottom: #209cee 3px solid;
+  border-bottom: #209cee 4px solid;
 }
 
 nav li a {
@@ -88,7 +88,7 @@ nav li .dropdown {
 }
 
 .fa-user-times {
-  color: white;
+  color: #161616;
 }
 
 .fa-user-times:hover {
@@ -100,6 +100,18 @@ nav li .dropdown {
 }
 
 .fa-pencil-square-o:hover {
+  color: #209cee;
+}
+
+.fa-wrench {
+  color: #161616;
+}
+
+.fa-ellipsis-v {
+  color: white;
+}
+
+.fa-ellipsis-v:hover {
   color: #209cee;
 }
 
@@ -138,11 +150,58 @@ nav li .dropdown {
   font-weight: 400;
 }
 
+.filebar {
+  color: white;
+  background-color: #202020;
+  border: #209cee 1px solid;
+  border-radius: 4px;
+}
+
 h1 {
   font-size: 3em !important;
   font-weight: 700 !important;
 }
 
+h2 {
+  font-size: 2.5em !important;
+  font-weight: 700 !important;
+}
+
 tr {
   text-align: center;
+}
+
+.task-name {
+  font-size: 0.9em;
+}
+
+.task-body {
+  font-size: 0.8em;
+}
+
+.task-card {
+  color: white;
+  background-color: #2a2a2a;
+  border-left: #209cee 4px solid;
+  border-radius: 4px;
+}
+
+.user-card {
+  color: white;
+  background-color: #2a2a2a;
+  border: #209cee 2px solid;
+  border-radius: 4px;
+}
+
+html {
+  background-color: #2a2a2a;
+}
+
+.homepage-header {
+  background-image: url("images/header.png");
+}
+
+.about {
+  background-color: #2a2a2a;
+  border-radius: 8px;
 }

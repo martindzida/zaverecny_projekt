@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { RouteComponentProps } from "react-router";
 import woke from "../images/woke.jpg";
+import store from "../redux/store";
 
 class UserPage extends Component {
   state = {};
 
-  // Nahrání údajů o uživateli (jméno, příjmení, obrázek, popisek atd.)
+  // Nahrání údajů o uživateli podle id (jméno, příjmení, obrázek, popisek atd.)
   //componentDidMount() {}
+
+  //Testování s daty ze storu! Normálně se budou získávat requestem
 
   render() {
     return (
@@ -18,21 +22,26 @@ class UserPage extends Component {
             <div className="row p-5 m-2">
               <div className="col-4">
                 <img
-                  src={woke}
+                  src={store.getState().user.user.imageSrc}
                   alt="nefunguje to xd"
-                  width={100}
-                  height={100}
+                  width={120}
+                  height={120}
                   className="rounded-circle"
                 />
               </div>
               <div className="col-8">
-                <h1>Franta Brambor</h1>
+                <h2>
+                  {store.getState().user.user.firstName}{" "}
+                  {store.getState().user.user.lastName}
+                </h2>
               </div>
             </div>
             <div className="row center p-3 m-2">
               <div className="col-12">
-                <div className="card bg-dark border-primary text-white">
-                  <p>Profile bio</p>
+                <div className="border-primary p-4 user-card">
+                  <div style={{ fontSize: "1.1em" }}>
+                    <p>{store.getState().user.user.bio}</p>
+                  </div>
                 </div>
               </div>
             </div>

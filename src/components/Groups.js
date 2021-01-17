@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { getUser } from "../redux/actions/actions";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import woke from "../images/woke.jpg";
 import store from "../redux/store";
 import axios from "axios";
 
@@ -19,7 +20,7 @@ class Groups extends Component {
       <Group
         key={1}
         id={1}
-        name="1"
+        name="IT1"
         icon="floppy-o"
         isOwner={true}
         handleDelete={(id, name) => {
@@ -46,7 +47,7 @@ class Groups extends Component {
       <Group
         key={2}
         id={2}
-        name="Braník"
+        name="IT2"
         icon="grav"
         isOwner={true}
         handleDelete={(id, name) => {
@@ -73,7 +74,7 @@ class Groups extends Component {
       <Group
         key={3}
         id={3}
-        name="3"
+        name="IT3"
         icon="code"
         isOwner={true}
         handleDelete={(id, name) => {
@@ -100,7 +101,7 @@ class Groups extends Component {
       <Group
         key={4}
         id={4}
-        name="4"
+        name="IT4 SIT"
         icon="camera-retro"
         isOwner={true}
         handleDelete={(id, name) => {
@@ -127,7 +128,7 @@ class Groups extends Component {
       <Group
         key={5}
         id={5}
-        name="5"
+        name="IT4 PRG"
         icon="code"
         isOwner={true}
         handleDelete={(id, name) => {
@@ -154,8 +155,8 @@ class Groups extends Component {
       <Group
         key={6}
         id={6}
-        name="6"
-        icon="grav"
+        name="IT4"
+        icon="wheelchair-alt"
         isOwner={false}
         handleDelete={(id, name) => {
           this.setState((prevState) => ({
@@ -206,26 +207,20 @@ class Groups extends Component {
 
   //Načtení skupin uživatele
   componentDidMount() {
-    /*axios.get("/app/board/").then((res) => {
-      const groups = res.data;
-      //Uložení pole komponentů Group do this.state.groups
-      const receivedData = groups.map((group) => (
-        <Group key={group.id} id={group.id} name={group.name} icon={group.icon}/>
-      ));
-      this.setState({
-        logs: receivedData,
+    axios
+      .get("/app/board/", {
+        headers: { Authorization: "Token " + store.getState().token.token },
+      })
+      .then((res) => {
+        const groups = res.data;
+        //Uložení pole komponentů Group do this.state.groups
+        const receivedData = groups.map((group) => (
+          <Group key={group.id} id={group.id} name={group.name} />
+        ));
+        this.setState({
+          groups: receivedData,
+        });
       });
-    });
-    console.log(store.getState().token.token);
-    axios.get("/app/profile/", {headers: {
-        token: store.getState().token.token
-        }
-        }).then((res) => {
-        this.props.getUser(res.data);
-    })*/
-    // fetch("https://jsonplaceholder.typicode.com/users/2")
-    //   .then((response) => response.json())
-    //   .then((data) => this.props.getUser(data));
   }
 
   handleOpenForm = () => {
@@ -238,6 +233,7 @@ class Groups extends Component {
     scroll.scrollToTop();
     this.setState({
       createGroup: false,
+      showSearchResult: false,
     });
   };
 
@@ -289,7 +285,7 @@ class Groups extends Component {
     let iconType = "fa fa-" + this.state.icon + " fa-4x";
     let newGroupForm;
     let searchResult;
-    let results = this.state.getSearchResult;
+    let results = [...this.state.getSearchResult];
     let searchResultRow = results.map((obj) => (
       //Link jinak než na tr
       <tr key={obj.id} scope="row">
@@ -312,7 +308,7 @@ class Groups extends Component {
             <table className="table table-hover table-dark">
               <thead className="thead-dark">
                 <tr scope="row">
-                  <th colSpan={12}>Výsledky vyhledávání</th>
+                  <th colSpan={12}>Výsledek vyhledávání</th>
                 </tr>
               </thead>
               <tbody>{searchResultRow}</tbody>
@@ -320,6 +316,8 @@ class Groups extends Component {
           </div>
         </div>
       );
+    } else {
+      searchResult = "";
     }
 
     if (this.state.createGroup) {
@@ -376,7 +374,7 @@ class Groups extends Component {
                     Vyberte ikonu
                   </option>
                   <option value="grav">Cosmonaut</option>
-                  <option value="wpexplorer">Telescope</option>
+                  <option value="wheelchair-alt">Wheelchair</option>
                   <option value="camera-retro">Camera</option>
                   <option value="code">Code</option>
                   <option value="floppy-o">Floppy</option>
